@@ -1,0 +1,21 @@
+app = "botbetmaster-bot"
+primary_region = "gru"
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[env]
+  NODE_ENV = "production"
+  API_BASE_URL = "https://reward-tracker-web-wild-wave-7489.fly.dev/api"
+  BOT_USERNAME = "@botbetmaster"
+
+# These sensitive values should be set using `fly secrets set`:
+# - TELEGRAM_TOKEN
+# - DATABASE_URL
+# - ADMIN_IDS
+# - REQUIRED_GROUP_ID
+# - GALERA_GROUP_ID
+
+[http_service]
+  internal_port = 3000
+  force_https = true
