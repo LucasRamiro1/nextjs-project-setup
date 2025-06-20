@@ -1,0 +1,12 @@
+app = "botbetmaster-web"
+primary_region = "gru"
+
+[http_service]
+  internal_port = 5173
+  force_https = true
+
+[build]
+  dockerfile = "Dockerfile.frontend"
+
+[env]
+  VITE_API_URL = "https://botbetmaster-api.fly.dev"
